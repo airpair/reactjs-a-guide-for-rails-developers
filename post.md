@@ -4,7 +4,7 @@ React.js is the new popular guy around the "JavaScript Frameworks" block, and it
 
 One of the good things about React is that it doesn't require any additional dependencies, making it pluggable with virtually any other JS library. Taking advantage of this feature, we are going to include it into our Rails stack to build a frontend-powered application, or you might say, a Rails view on steroids.
 
-## A mock expense tracking project
+## A mock expense tracking app
 
 For this guide, we are building a small application from scratch to keep track of our expenses; each record will consist of a date, a title and an amount. A record will be treated as _Credit_ if its amount is greater than zero, otherwise it will be treated as _Debit_. Here is a mockup of the project:
 
@@ -867,7 +867,7 @@ We are done! Smile, we have just built a small Rails + React application from sc
 
 You can take a look at the resulting code of this section [here](https://github.com/fervisa/accounts-react-rails/tree/1a62dd0e48b31aa55659e0035e754cee1776aa61), or just the changes introduced by this section [here](https://github.com/fervisa/accounts-react-rails/commit/1a62dd0e48b31aa55659e0035e754cee1776aa61).
 
-## Closing comments
+## Closing thoughts: React.js Simplicity & Flexibility 
 
 We have examined some of React's functionalities and we learned that it barely introduces new concepts. I have heard comments of people saying X or Y JavaScript framework has a steep learning curve because of all the new concepts introduced, this is not React's case; it implements core JavaScript concepts such as event handlers and bindings, making it easy to adopt and learn. Again, one of its strengths is its simplicity.
 
