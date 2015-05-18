@@ -1,10 +1,10 @@
-## Introduction
+## Introduction to React.js
 
 React.js is the new popular guy around the "JavaScript Frameworks" block, and it shines for its simplicity. Where other frameworks implement a complete _MVC_ framework, we could say React only implements the _V_ (in fact, some people replace their framework's _V_ with React). React applications are built over 2 main principles: _Components_ and _States_. _Components_ can be made of other smaller components, built-in or custom; the _State_ drives what the guys at Facebook call _one-way reactive data flow_, meaning that our UI will react to every change of state.
 
 One of the good things about React is that it doesn't require any additional dependencies, making it pluggable with virtually any other JS library. Taking advantage of this feature, we are going to include it into our Rails stack to build a frontend-powered application, or you might say, a Rails view on steroids.
 
-## The project
+## A mock expense tracking project
 
 For this guide, we are building a small application from scratch to keep track of our expenses; each record will consist of a date, a title and an amount. A record will be treated as _Credit_ if its amount is greater than zero, otherwise it will be treated as _Debit_. Here is a mockup of the project:
 
@@ -17,7 +17,7 @@ Summarizing, the application will behave as follows:
 * Clicking on any _Delete_ button will remove the associated record from the table
 * Adding, editing or removing an existing record will update the amount boxes at the top of the page
 
-## Initializing our Rails/React project
+## Initializing our React.js on Rails project
 
 First things first, we need to start our brand new Rails project, we are naming it `Accounts`:
 
