@@ -1,10 +1,10 @@
-## Introduction
+## Introduction to React.js
 
 React.js is the new popular guy around the "JavaScript Frameworks" block, and it shines for its simplicity. Where other frameworks implement a complete _MVC_ framework, we could say React only implements the _V_ (in fact, some people replace their framework's _V_ with React). React applications are built over 2 main principles: _Components_ and _States_. _Components_ can be made of other smaller components, built-in or custom; the _State_ drives what the guys at Facebook call _one-way reactive data flow_, meaning that our UI will react to every change of state.
 
 One of the good things about React is that it doesn't require any additional dependencies, making it pluggable with virtually any other JS library. Taking advantage of this feature, we are going to include it into our Rails stack to build a frontend-powered application, or you might say, a Rails view on steroids.
 
-## The project
+## A mock expense tracking app
 
 For this guide, we are building a small application from scratch to keep track of our expenses; each record will consist of a date, a title and an amount. A record will be treated as _Credit_ if its amount is greater than zero, otherwise it will be treated as _Debit_. Here is a mockup of the project:
 
@@ -17,7 +17,7 @@ Summarizing, the application will behave as follows:
 * Clicking on any _Delete_ button will remove the associated record from the table
 * Adding, editing or removing an existing record will update the amount boxes at the top of the page
 
-## Initializing our Rails/React project
+## Initializing our React.js on Rails project
 
 First things first, we need to start our brand new Rails project, we are naming it `Accounts`:
 
@@ -867,7 +867,7 @@ We are done! Smile, we have just built a small Rails + React application from sc
 
 You can take a look at the resulting code of this section [here](https://github.com/fervisa/accounts-react-rails/tree/1a62dd0e48b31aa55659e0035e754cee1776aa61), or just the changes introduced by this section [here](https://github.com/fervisa/accounts-react-rails/commit/1a62dd0e48b31aa55659e0035e754cee1776aa61).
 
-## Closing comments
+## Closing thoughts: React.js Simplicity & Flexibility 
 
 We have examined some of React's functionalities and we learned that it barely introduces new concepts. I have heard comments of people saying X or Y JavaScript framework has a steep learning curve because of all the new concepts introduced, this is not React's case; it implements core JavaScript concepts such as event handlers and bindings, making it easy to adopt and learn. Again, one of its strengths is its simplicity.
 
