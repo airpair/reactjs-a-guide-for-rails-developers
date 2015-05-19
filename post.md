@@ -82,7 +82,7 @@ Don't forget to start your server with `rails s`.
 
 Done! We're ready to write some code.
 
-## Listing Records
+## Nesting Components: Listing Records
 
 For our first task, we need to render any existing record inside a table. First of all, we need to create an `index` action inside of our `RecordsController`:
 
@@ -219,7 +219,7 @@ When we handle dynamic children (in this case, records) we need to provide a `ke
 
 You can take a look at the resulting code of this section [here](https://github.com/fervisa/accounts-react-rails/tree/bf1d80cf3d23a9a5e4aa48c86368262b7a7bd809), or just the changes introduced by this section [here](https://github.com/fervisa/accounts-react-rails/commit/bf1d80cf3d23a9a5e4aa48c86368262b7a7bd809).
 
-## Creating New Records
+## Parent-Child communication: Creating Records
 
 Now that we are displaying all the existing records, it would be nice to include a form to create new records, let's add this new feature to our React/Rails application.
 
@@ -415,7 +415,7 @@ If you have used other JS frameworks along with Rails (for example, AngularJS) t
 
 You can take a look at the resulting code of this section [here](https://github.com/fervisa/accounts-react-rails/tree/f4708e19f8be929471bc0c8c2bda93f36b9a7f23), or just the changes introduced by this section [here](https://github.com/fervisa/accounts-react-rails/commit/f4708e19f8be929471bc0c8c2bda93f36b9a7f23).
 
-## Debit/Credit/Balance Indicators
+## Reusable Components: Amount Indicators
 
 What would an application be without some (nice) indicators? Let's add some boxes at the top of our window with some useful information. We goal for this section is to show 3 values: Total credit amount, total debit amount and Balance. This looks like a job for 3 components, or maybe just one with properties?
 
@@ -490,7 +490,7 @@ We are done with this feature! Refresh your browser, you should see three boxes 
 
 You can take a look at the resulting code of this section [here](https://github.com/fervisa/accounts-react-rails/tree/8d6f0a4fb62f2a9abd5d34d502461388863302cb), or just the changes introduced by this section [here](https://github.com/fervisa/accounts-react-rails/commit/8d6f0a4fb62f2a9abd5d34d502461388863302cb).
 
-## Deleting Records
+## setState/replaceState: Deleting Records
 
 The next feature in our list is the ability to delete records, we need a new `Actions` column in our records table, this column will have a `Delete` button for each record, pretty standard UI. As in our previous example, we need to create the `destroy` method in our Rails controller:
 
@@ -549,7 +549,7 @@ And finally, open the `Record` component and add an extra column with a _Delete_
             'Delete'
 ```
 
-Save your file, refresh your browser and... We have a useless button!
+Save your file, refresh your browser and... We have a useless button with no events attached to it!
 
 ![Delete records](//i.imgur.com/JV1KVNK.png)
 
@@ -616,7 +616,9 @@ When the _delete_ button gets clicked, `handleDelete` sends an AJAX request to t
             React.createElement Record, key: record.id, record: record, handleDeleteRecord: @deleteRecord
 ```
 
-Basically, our `deleteRecord` method copies the current component's `records` state, performs an index search of the record to be deleted, splices it from the array and updates the component's state, pretty standard JavaScript operations. We introduced a new way of interacting with the _state_, `replaceState`; the main difference between `setState` and `replaceState` is that the first one will only update one key of the _state_ object, the second one will completely __override__ the current state of the component with whatever new object we send.
+Basically, our `deleteRecord` method copies the current component's `records` state, performs an index search of the record to be deleted, splices it from the array and updates the component's state, pretty standard JavaScript operations.
+
+We introduced a new way of interacting with the _state_, `replaceState`; the main difference between `setState` and `replaceState` is that the first one will only update one key of the _state_ object, the second one will completely __override__ the current state of the component with whatever new object we send.
 
 After updating this last bit of code, refresh your browser window and try to delete a record, a couple of things should happen:
 
@@ -672,11 +674,11 @@ Shorter, more elegant and with the same results, feel free to reload your browse
 
 You can take a look at the resulting code of this section [here](https://github.com/fervisa/accounts-react-rails/tree/d19127f40ae2f795a30b7de6470cde95d3734eee), or just the changes introduced by this section [here](https://github.com/fervisa/accounts-react-rails/commit/d19127f40ae2f795a30b7de6470cde95d3734eee).
 
-## Editing records
+## Reactive Data Flow: Editing Records
 
 For the final feature, we are adding an extra _Edit_ button, next to each _Delete_ button in our records table. When this _Edit_ button gets clicked, it will toggle the entire row from a read-only _state_ (wink wink) to an editable state, revealing an inline form where the user can update the record's content. After submitting the updated content or canceling the action, the record's row will return to its original read-only _state_.
 
-As you might have guessed from the previous paragraph, we need to handle _mutable_ data to toggle each record's state inside of our `Record` component. Let's add an `edit` flag and a `handleToggle` method to `record.js.coffee`:
+As you might have guessed from the previous paragraph, we need to handle _mutable_ data to toggle each record's state inside of our `Record` component. This is a use case of what React calls _reactive data flow_. Let's add an `edit` flag and a `handleToggle` method to `record.js.coffee`:
 
 ```coffeescript
   # app/assets/javascripts/components/record.js.coffee
