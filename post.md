@@ -411,7 +411,7 @@ Refresh your browser, fill in the form with a new record, click _Create record_.
 
 ![New record](//i.imgur.com/635Wuv7.png)
 
-If you have used other JS frameworks along with Rails (for example, AngularJS) to build similar features, you might have run into problems because your `POST` requests don't include the `CSRF` token required by Rails, so, why didn'twe run into this same issue? Easy, because we are using `jQuery` to interact with our backend, and Rails' `jquery_ujs` unobtrusive driver will include the `CSRF` token on every _AJAX_ request for us. Cool!
+If you have used other JS frameworks along with Rails (for example, AngularJS) to build similar features, you might have run into problems because your `POST` requests don't include the `CSRF` token required by Rails, so, why didn't we run into this same issue? Easy, because we are using `jQuery` to interact with our backend, and Rails' `jquery_ujs` unobtrusive driver will include the `CSRF` token on every _AJAX_ request for us. Cool!
 
 You can take a look at the resulting code of this section [here](https://github.com/fervisa/accounts-react-rails/tree/f4708e19f8be929471bc0c8c2bda93f36b9a7f23), or just the changes introduced by this section [here](https://github.com/fervisa/accounts-react-rails/commit/f4708e19f8be929471bc0c8c2bda93f36b9a7f23).
 
@@ -438,7 +438,7 @@ We can build a new `AmountBox` component which will receive three properties: `a
             amountFormat(@props.amount)
 ```
 
-We are just using Bootstrap's `panel` element to display the information in a "blocky" way, and setting the color through the `type` property. We have also included a really simple amount formatter method called `formattedAmount` which reads the `amount` property and displays it in currency format.
+We are just using Bootstrap's `panel` element to display the information in a "blocky" way, and setting the color through the `type` property. We have also included a really simple amount formatter method called `amountFormat` which reads the `amount` property and displays it in currency format.
 
 In order to have a complete solution, we need to create this element (3 times) inside of our main component, sending the required properties depending on the data we want to display. Let's build the calculator methods first, open the `Records` component and add the following methods:
 
