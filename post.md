@@ -417,7 +417,7 @@ You can take a look at the resulting code of this section [here](https://github.
 
 ## Reusable Components: Amount Indicators
 
-What would an application be without some (nice) indicators? Let's add some boxes at the top of our window with some useful information. We goal for this section is to show 3 values: Total credit amount, total debit amount and Balance. This looks like a job for 3 components, or maybe just one with properties?
+What would an application be without some (nice) indicators? Let's add some boxes at the top of our window with some useful information. Our goal for this section is to show 3 values: Total credit amount, total debit amount and Balance. This looks like a job for 3 components, or maybe just one with properties?
 
 We can build a new `AmountBox` component which will receive three properties: `amount`, `text` and `type`. Create a new file called `amount_box.js.coffee` under `javascripts/components/` and paste the following code:
 
