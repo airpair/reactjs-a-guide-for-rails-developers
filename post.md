@@ -417,7 +417,7 @@ You can take a look at the resulting code of this section [here](https://github.
 
 ## Reusable Components: Amount Indicators
 
-What would an application be without some (nice) indicators? Let's add some boxes at the top of our window with some useful information. We goal for this section is to show 3 values: Total credit amount, total debit amount and Balance. This looks like a job for 3 components, or maybe just one with properties?
+What would an application be without some (nice) indicators? Let's add some boxes at the top of our window with some useful information. Our goal for this section is to show 3 values: Total credit amount, total debit amount and Balance. This looks like a job for 3 components, or maybe just one with properties?
 
 We can build a new `AmountBox` component which will receive three properties: `amount`, `text` and `type`. Create a new file called `amount_box.js.coffee` under `javascripts/components/` and paste the following code:
 
@@ -780,7 +780,7 @@ Finally, the `render` method boils down to the following code:
         @recordRow()
 ```
 
-You can refresh your browser to play around with the new toggle behavior, but don't submit any changes yet as we haven't implemented the actual _update_ functionality. 
+You can refresh your browser to play around with the new toggle behavior, but don't submit any changes yet as we haven't implemented the actual _update_ functionality.
 
 ![Toggle row](//i.imgur.com/dwNuuXw.png)
 ![Toggle row](//i.imgur.com/jaQ1rId.png)
@@ -869,7 +869,7 @@ We are done! Smile, we have just built a small Rails + React application from sc
 
 You can take a look at the resulting code of this section [here](https://github.com/fervisa/accounts-react-rails/tree/1a62dd0e48b31aa55659e0035e754cee1776aa61), or just the changes introduced by this section [here](https://github.com/fervisa/accounts-react-rails/commit/1a62dd0e48b31aa55659e0035e754cee1776aa61).
 
-## Closing thoughts: React.js Simplicity & Flexibility 
+## Closing thoughts: React.js Simplicity & Flexibility
 
 We have examined some of React's functionalities and we learned that it barely introduces new concepts. I have heard comments of people saying X or Y JavaScript framework has a steep learning curve because of all the new concepts introduced, this is not React's case; it implements core JavaScript concepts such as event handlers and bindings, making it easy to adopt and learn. Again, one of its strengths is its simplicity.
 
